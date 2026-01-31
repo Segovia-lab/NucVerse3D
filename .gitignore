@@ -1,0 +1,7 @@
+src/__pycache__/
+*.pyc
+data/
+*.h5
+*.hdf5
+*.weights.h5
+models/
