@@ -1,7 +1,38 @@
+# Python
 src/__pycache__/
+__pycache__/
 *.pyc
-data/
+*.pyo
+*.pyd
+
+# Large data / model / archive files
 *.h5
 *.hdf5
 *.weights.h5
-models/
+*.zip
+*.rar
+
+# Noble (2009) project skeleton — track structure via .gitkeep, ignore contents
+/data/*
+!/data/.gitkeep
+!/data/raw/
+!/data/processed/
+!/data/external/
+/data/raw/*
+!/data/raw/.gitkeep
+/data/processed/*
+!/data/processed/.gitkeep
+/data/external/*
+!/data/external/.gitkeep
+
+/models/*
+!/models/.gitkeep
+
+/notebooks/*
+!/notebooks/.gitkeep
+
+/reports/*
+!/reports/.gitkeep
+
+/results/*
+!/results/.gitkeep
