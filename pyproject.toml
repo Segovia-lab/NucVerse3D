@@ -16,6 +16,31 @@ classifiers = [
 ]
 requires-python = "~=3.10.0"
 
+# Only TensorFlow is hard-pinned (the version used in the paper — drives the entire
+# CUDA wheel stack). Other libs are left unpinned because their APIs are stable at the
+# level this code uses them.
+dependencies = [
+    "tensorflow[and-cuda]==2.16.2",
+    "connected-components-3d",
+    "elasticdeform",
+    "joblib-progress",
+    "loguru",
+    "pandas",
+    "patchify",
+    "platformdirs",
+    "python-dotenv",
+    "scikit-image",
+    "scikit-learn",
+    "sympy",
+    "tifffile",
+    "tomli",
+    "tqdm",
+    "typer",
+]
+
+[project.optional-dependencies]
+dev = ["ruff"]
+
 # Flat src/ layout (Noble 2009): top-level scripts live directly under src/,
 # subdirectories (keras_models, utils, …) are sub-packages.
 [tool.setuptools]
