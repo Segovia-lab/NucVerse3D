@@ -47,15 +47,12 @@ dev = ["ruff"]
 package-dir = {"" = "src"}
 py-modules = [
     "config",
-    "dataset",
     "dataset_preparation",
     "dataset_splitter",
-    "features",
     "generate_combined_data_set",
     "generate_combined_data_set_subfolder",
     "group_datasets",
     "nuclei_prediction",
-    "plots",
     "savetiff_combined_data_set",
     "training_pipeline",
     "training_pipeline2",
