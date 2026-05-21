@@ -53,6 +53,7 @@ py-modules = [
     "features",
     "generate_combined_data_set",
     "generate_combined_data_set_subfolder",
+    "group_datasets",
     "nuclei_prediction",
     "plots",
     "savetiff_combined_data_set",
