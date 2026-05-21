@@ -12,8 +12,6 @@ import config
 from pathlib import Path
 from skimage.transform import resize
 
-os.environ["CUDA_VISIBLE_DEVICES"]  = "1"  # Only the second GPU will be visible
-
 
 gpus = tf.config.experimental.list_physical_devices("GPU")
 for gpu in gpus:
