@@ -8,7 +8,6 @@ Created on Fri Jul 26 16:45:41 2024
 @author: ws2
 """
 import os
-os.environ["CUDA_VISIBLE_DEVICES"]     = "0"  # Only the second GPU will be visible
 os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
 import numpy as np
 import pandas as pd

@@ -1,8 +1,0 @@
-elasticdeform
-tensorflow[and-cuda]
-platformdirs
-tomli
-connected-components-3d
-patchify
-joblib-progress
-sympy

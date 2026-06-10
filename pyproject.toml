@@ -1,22 +1,66 @@
 [build-system]
-requires = ["flit_core >=3.2,<4"]
-build-backend = "flit_core.buildapi"
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
 
 [project]
-name = "nuclei-segmentation-3d"
+name = "nucverse3d"
 version = "0.0.1"
-description = "3D nuclei segmentation project for biomedical image analysis"
+description = "NucVerse3D: generalizable 3D nuclear instance segmentation across heterogeneous microscopy modalities"
 authors = [
-  { name = "Your name (or your organization/company/team)" },
+  { name = "Vergara J. et al." },
 ]
 
 readme = "README.md"
 classifiers = [
     "Programming Language :: Python :: 3",
-    
 ]
 requires-python = "~=3.10.0"
 
+# Only TensorFlow is hard-pinned (the version used in the paper — drives the entire
+# CUDA wheel stack). Other libs are left unpinned because their APIs are stable at the
+# level this code uses them.
+dependencies = [
+    "tensorflow[and-cuda]==2.16.2",
+    "connected-components-3d",
+    "elasticdeform",
+    "joblib-progress",
+    "loguru",
+    "pandas",
+    "patchify",
+    "platformdirs",
+    "python-dotenv",
+    "scikit-image",
+    "scikit-learn",
+    "sympy",
+    "tifffile",
+    "tomli",
+    "tqdm",
+    "typer",
+]
+
+[project.optional-dependencies]
+dev = ["ruff"]
+
+# Flat src/ layout (Noble 2009): top-level scripts live directly under src/,
+# subdirectories (keras_models, utils, …) are sub-packages.
+[tool.setuptools]
+package-dir = {"" = "src"}
+py-modules = [
+    "config",
+    "dataset_preparation",
+    "dataset_splitter",
+    "generate_combined_data_set",
+    "generate_combined_data_set_subfolder",
+    "group_datasets",
+    "nuclei_prediction",
+    "savetiff_combined_data_set",
+    "training_pipeline",
+    "training_pipeline2",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+exclude = ["__pycache__*", "results*"]
 
 [tool.ruff]
 line-length = 99
@@ -29,4 +73,3 @@ extend-select = ["I"]  # Add import sorting
 [tool.ruff.lint.isort]
 known-first-party = ["src"]
 force-sort-within-sections = true
-
