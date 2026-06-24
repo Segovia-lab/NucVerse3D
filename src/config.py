@@ -98,7 +98,7 @@ ROTATION_MAX_ANGLE = 45  # Maximum rotation angle in degrees
 # =============================================================================
 # IMAGE PROCESSING CONFIGURATION
 # =============================================================================
-PREPROCESSING_ENABLED = False  # If False, apply just normalization
+PREPROCESSING_ENABLED = True  # If False, apply just normalization
 
 # Normalization parameters
 NORMALIZE_P_LOWER = 2  # Lower percentile for normalization
