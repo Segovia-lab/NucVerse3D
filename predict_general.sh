@@ -28,7 +28,7 @@ for entry in "${DATASETS[@]}"; do
     echo "-----------------------------------"
 
     # Run nuclei prediction
-    python src/nuclei_prediction.py "$MODEL_NAME_S" "$IMAGE_DIR" --avg_radius "$AVG_RADIUS"
+    python -m nuclei_prediction "$MODEL_NAME_S" "$IMAGE_DIR" --avg_radius "$AVG_RADIUS"
 
     if [ $? -eq 0 ]; then
         echo "Completed prediction for: $IMAGE_DIR"
